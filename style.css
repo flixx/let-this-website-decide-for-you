@@ -1,0 +1,123 @@
+/* CSS RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* Don't kill focus outline for keyboard users: http://24ways.org/2009/dont-lose-your-focus */
+a:hover, a:active {
+    outline: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Custom start */
+
+html { width: 100%; height: 100%; }
+body { min-width: 100%; min-height: 100%; font-family: 'Amatic SC';}
+form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 1200px;
+  height: 300px;
+  text-align: center;
+  font-family: 'Amatic SC';
+}
+
+.option {
+	font-size: 40pt;
+	width: 320px;
+	padding: 10px;
+	vertical-align:middle;
+	font-family: 'Amatic SC';
+	text-align: center;
+	background-color: transparent;
+}
+
+#or {
+	font-size: 140pt;
+	margin: 0 50px;
+	vertical-align:middle;
+	border: none;
+}
+
+.btn {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: -moz-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: -ms-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: -o-linear-gradient(top, #ffffff, #f7f7f7);
+  background-image: linear-gradient(to bottom, #ffffff, #f7f7f7);
+  color: #303030;
+  font-size: 60px;
+  padding: 10px 20px 10px 20px;
+  border: solid #c7c7c7 1px;
+  text-decoration: none;
+  font-family: 'Amatic SC';
+}
+
+.btn:hover {
+  background: #e8e8e8;
+  background-image: -webkit-linear-gradient(top, #e8e8e8, #e3e3e3);
+  background-image: -moz-linear-gradient(top, #e8e8e8, #e3e3e3);
+  background-image: -ms-linear-gradient(top, #e8e8e8, #e3e3e3);
+  background-image: -o-linear-gradient(top, #e8e8e8, #e3e3e3);
+  background-image: linear-gradient(to bottom, #e8e8e8, #e3e3e3);
+  text-decoration: none;
+}
+
+#submit {
+	margin-top: 40px;
+}
+
+#svgout {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 1200px;
+	height: 300px;
+	margin: auto;
+}
