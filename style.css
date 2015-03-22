@@ -73,6 +73,8 @@ form {
 	font-family: 'Amatic SC';
 	text-align: center;
 	background-color: transparent;
+	border: 1px solid rgb(187, 187, 187);
+	color: black;
 }
 
 #or {
@@ -84,26 +86,16 @@ form {
 
 .btn {
   background: #ffffff;
-  background-image: -webkit-linear-gradient(top, #ffffff, #f7f7f7);
-  background-image: -moz-linear-gradient(top, #ffffff, #f7f7f7);
-  background-image: -ms-linear-gradient(top, #ffffff, #f7f7f7);
-  background-image: -o-linear-gradient(top, #ffffff, #f7f7f7);
-  background-image: linear-gradient(to bottom, #ffffff, #f7f7f7);
-  color: #303030;
   font-size: 60px;
   padding: 10px 20px 10px 20px;
   border: solid #c7c7c7 1px;
   text-decoration: none;
   font-family: 'Amatic SC';
+  color: black;
 }
 
 .btn:hover {
-  background: #e8e8e8;
-  background-image: -webkit-linear-gradient(top, #e8e8e8, #e3e3e3);
-  background-image: -moz-linear-gradient(top, #e8e8e8, #e3e3e3);
-  background-image: -ms-linear-gradient(top, #e8e8e8, #e3e3e3);
-  background-image: -o-linear-gradient(top, #e8e8e8, #e3e3e3);
-  background-image: linear-gradient(to bottom, #e8e8e8, #e3e3e3);
+  background: #f2f2f2;
   text-decoration: none;
 }
 

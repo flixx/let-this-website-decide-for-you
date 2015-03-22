@@ -24,7 +24,7 @@ var SQUEEZE_SCALES = [[0.8, 400],
                       [1  , 600],
                       [0.7, 400],
                       [0.5, 1500]];
-var SHAKING = 0.5;
+var SHAKING = 0.08;
 var SHAKE_DURATION = 3890;
 
 $("#main-form").submit(function( event ) {
