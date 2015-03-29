@@ -86,6 +86,7 @@ function moveToCenter() {
             x: (canvasWidth / 2) - 2
         });
         squeeze(0);
+        shakeStop = false;
         shake(0);
     });
 }
