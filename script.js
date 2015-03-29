@@ -2,13 +2,13 @@ $(function() {
 var s = Snap("#svgout");
 var optionSize = $('.option').css('font-size');
 
-var opt1 = {'x': 316, 'y': 114};
-var opt2 = {'x': 882, 'y': 114};
+var opt1 = {'x': 328+400, 'y': 114+850};
+var opt2 = {'x': 871+400, 'y': 114+850};
 var optWin;
 var optLose;
 
 var svgGroup;
-var canvasWidth = 1200;
+var canvasWidth = 2000;
 var shakeStop = false;
 
 // -1: left, 1: right
@@ -27,7 +27,7 @@ var SQUEEZE_SCALES = [[0.8, 400],
 var SHAKING = 0.08;
 var SHAKE_DURATION = 3890;
 
-$("#main-form").submit(function( event ) {
+$("#main-form").submit(function(event) {
     event.preventDefault();
     init();
     $('#option1').fadeOut();
@@ -40,9 +40,19 @@ $("#main-form").submit(function( event ) {
     setTimeout(moveToCenter, 1000);
 });
 
+$('#btn-reset').click(function(event) {
+    event.preventDefault()
+    reset();
+})
+
 function init() {
-    opt1.svg = s.text(opt1.x, opt1.y, $('#option1').val()).attr({ fontSize: optionSize, opacity: 1, "text-anchor": "middle" });
-    opt2.svg = s.text(opt2.x, opt2.y, $('#option2').val()).attr({ fontSize: optionSize, opacity: 1, "text-anchor": "middle" });
+    s.clear();
+    $("#svgout").show();
+    opt1.svg = s.text(opt1.x, opt1.y, $('#option1').val()).attr({ fontSize: optionSize, opacity: 0, "text-anchor": "middle" });
+    opt2.svg = s.text(opt2.x, opt2.y, $('#option2').val()).attr({ fontSize: optionSize, opacity: 0, "text-anchor": "middle" });
+    opt1.svg.animate({ opacity: 1 },200, mina.linear, function() { } );
+    opt2.svg.animate({ opacity: 1 },200, mina.linear, function() { } );
+
     svgGroup = s.group(opt1.svg, opt2.svg);
 
     opt1.w = parseInt(opt1.svg.getBBox().width);
@@ -206,7 +216,9 @@ function hitUp(n) {
 
 // Zooms in the winner.
 function proudWinner() {
-    optWin.svg.animate({ transform: "T " + optWin.riseOffset + ",0,R0,0,0S2,2" }, 300, mina.elastic, function() { });
+    optWin.svg.animate({ transform: "T " + optWin.riseOffset + ",0,R0,0,0S4,4" }, 300, mina.bounce, function() {
+        setTimeout(finished, 2000);
+    });
 }
 
 // Core.
@@ -220,6 +232,33 @@ function decide() {
 
     optWin  = (winner == -1) ? opt1 : opt2;
     optLose = (winner == -1) ? opt2 : opt1;
+}
+
+// Show the reset button
+function finished() {
+    $('#btn-reset').fadeIn();
+}
+
+function reset() {
+    $('.option').val('');
+    $(this).val('');
+    flyIn($('#submit'));
+    flyIn($('.option'));
+    flyIn($('#or'));
+    flyOut($('#btn-reset'));
+    flyOut($('#svgout'));
+}
+function flyIn(element) {
+    element.show();
+    element.velocity({translateX: -1500}, 0);
+    element.velocity({translateX: 0}, 500);
+}
+
+function flyOut(element) {
+    element.velocity({translateX: 1500}, 500, function() {
+        element.hide();
+        element.velocity({translateX: 0}, 0);
+    });
 }
 
 // Helper
